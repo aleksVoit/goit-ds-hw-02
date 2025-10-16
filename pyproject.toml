@@ -1,0 +1,16 @@
+[tool.poetry]
+name = "goit-ds-hw-02"
+version = "0.1.0"
+description = "ds - db practice"
+authors = ["Aleksandr <aleksandr.voitushenko@gmail.com>"]
+license = "MIT"
+readme = "README.md"
+
+[tool.poetry.dependencies]
+python = "^3.12"
+faker = "^37.11.0"
+
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
