@@ -1,8 +1,8 @@
-from sqlite3 import Error
+from sqlite3 import Error, Connection
 from connect import create_connection, database
 
 
-def create_table(conn, cr_table_sql):
+def create_table(conn: Connection, cr_table_sql: str):
     try:
         cursor = conn.cursor()
         cursor.execute(cr_table_sql)
@@ -34,7 +34,7 @@ if __name__ == "__main__":
         description TEXT,
         status_id INTEGER,
         user_id INTEGER,
-        FOREIGN KEY (status_id) REFERENCES status(id),
+        FOREIGN KEY (status_id) REFERENCES status(id) ON DELETE CASCADE,
         FOREIGN KEY (user_id) REFERENCES users(id)
         );
         """

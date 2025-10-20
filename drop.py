@@ -1,10 +1,11 @@
-from sqlite3 import Error
+from sqlite3 import Error, Connection
 from connect import create_connection, database
 
 
-def drop_table(conn, table_name):
+def drop_table(conn: Connection, table_name: str):
+    
+    cursor = conn.cursor()
     try:
-        cursor = conn.cursor()
         cursor.execute(f"DROP TABLE {table_name}")
     except Error as e:
         print(e)
